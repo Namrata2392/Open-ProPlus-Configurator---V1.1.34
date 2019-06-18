@@ -1,0 +1,111 @@
+﻿OpenPro+ Configurator V1 v 1.0.0 Beta Release Notes
+
+REVISION HISTORY
+-----------------
+
+Version 1.1.0   Beta
+	        Initial Release
+
+Version 1.1.2   IEC101Master,IEC101Slave,ADR,IEC61850Client
+	        Bug Fixing .
+	        XSD Validation Without Namespace
+	        Automapping in AI,DI,DO,EN at Configuration And Mapping Side .
+
+Version 1.1.3   AO in MasterConfiguration 
+	        Description in Maaping side
+	        AO in Overview
+	        Bug Fixing 
+
+Version 1.1.4   Bug Fixing 
+	        Export to excel in frmOverview
+
+
+Version 1.1.5   Bug Fixing 
+
+Version 1.1.6   Enhancement(UI)
+
+Version 1.1.7   Add EnableDI in All Masters.
+                Update XSD (Add EnableDI in All Masters).
+
+Version 1.1.8   Bug Fixing 
+
+Version 1.1.9   Bug Fixing 
+
+Version 1.1.10  Bug Fixing 
+
+Version 1.1.11  UI Enhancement.
+		EnableDI.
+		Update XSD.
+
+Version 1.1.12  Bug Fixing 
+
+Version 1.1.15  Bug Fixing 
+		Update XSD.
+		Add EventWithoutTime in IEC104Slave
+
+Version 1.1.13  Bug Fixing 
+
+Version 1.1.14  Bug Fixing 
+
+Version 1.1.15  Bug Fixing 
+		Add EventWithoutTime attribute in IEC104 slave,which will specify that send events without time if its value is TRUE. Its default
+		value will be FALSE. It will be optional and unsignedByte.
+		Update XSD
+
+Version 1.1.16  Bug Fixing 
+		Add VirtualIP in NetworkConfiguration.
+		If "RedundancyMode" in SystemConfig is "None" then VirtualIP in NetworkConfiguration is non-editable.
+		If "RedundancyMode" in SystemConfig is "Primary" or "Secondary" then VirtualIP in NetworkConfiguration is editable.
+		If VirtualIP in NetworkConfiguration is not "0.0.0.0" then LocalIP in IEC104Slave,MODBUSSlave,IEC61850Server is replace by VirtualIP in XML.
+		Update XSD .
+
+
+Version 1.1.17  Bug Fixing:import .icd file issue in IEC61850Server Master .
+		Update manual.
+		Update .chm File.
+
+
+Version 1.1.18 	Bug Fix
+		Add "ClockSyncInterval" attribute in ADRMaster.
+		If "ClockSyncInterval" not exist while importing XML set defalut "ClockSyncInterval" value to "60".
+		Update XSD. Add "ClockSyncInterval" in ADR Master without disturbing old XML's . 
+
+		
+Version 1.1.19 	Bug Fix
+		Update XSD
+		Add "ICDPath" in XML for IEC61850Client .
+
+Version 1.1.20   Allow duplicate mapping AI,DI,DO,EN No.
+		 change in reindexing AI,DI,DO,EN No.	
+
+Version 1.1.22 	Bug Fix	    
+
+Version 1.1.23 	Bug Fix	 
+ 
+Version 1.1.24 	Bug Fix	  
+
+Version 1.1.25 	Bug Fix	       
+
+Version 1.1.26 	Add EN in IEC61850Client
+		Update XSD: Add EN in  iEC61850Client
+		Add FC in IEC6850 All Configuration																				 Add FC in IEC6850 All Configuration
+		 keep icd data backup.	
+
+Version 1.1.27  Bug Fix
+
+
+Version 1.1.28	IEC61850Client 
+
+Version 1.1.29	Bug Fix															 on itemchange highlight items in All Config and mapping side .
+																						 keep icd data backup.
+																						 Add FileDirctoryOperations.cs     
+																						 
+Version 1.1.30  Bug fix	
+				Changes done in ENConfiguration and AIConfiguration
+
+Version 1.1.30.1  Bug Fix
+
+Version 1.1.31    Bug Fix-Entry Deleted from Parameter Load Configuration should be deleted from Virtual Group
+
+Version 1.1.34    Requirement:Subnet and Gateway user entry should be use the IP Validations rules.
+																						

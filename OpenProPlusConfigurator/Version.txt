@@ -1,0 +1,218 @@
+﻿*************************************************************************************************************************************************************************************************************************
+Version		|	Requirement From	|	Changes By And Date					|	Description																															        *
+*************************************************************************************************************************************************************************************************************************
+
+V.1.0.0     	Amol,Aaditya		Namrata: 10/5/2017						Requirement: Add LocalIP in MODBUSSlave Configuration.
+				Naina Mam			Namrata: 23/5/2017 To 25/05/2017		Requirement:Remove Namespace From XML .
+				Shilpa				Namrata: 24/5/2017						Changes: Replace RedundancyMode Standalone to None in SystemConfig .
+				Rohini				Namrata: 30/5/2017						Requirement: Add PrimaryDevice, br0 in Network Configuration .
+				Amol				Namrata: 15/6/2017						Requirement: Add UpdateDI in Utils used For VirtualDI .
+				Rohini				Namrata: 20/6/2017						Requirement: Add ADR Master,Datatypes in XSD .
+				Amol				Namrata: 21/06/2018						Requirement: PulseDuration(ms)should be autofill with default value of 100ms and should be configurable .
+				Amol				Namrata 22/06/2018						Requirement: ResposeType and DataTypes of IEC103Master EN field not supplied
+				Naina Mam			Namrata : 23/6/2017 To 28/6/2017		Requirement: Development of ADR Master.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V.1.1.0			Shilpa				Namrata: 29/6/2017						Requirement: Add IEC101Slave,IEC101Master in XSD.
+				Naina Mam			Namrata: 30/06/2017						Changes: About Screen.
+																			Requirement: Add frmOpenPro+UI .
+				Shilpa				Namrata: 01/07/2017						Requirement: Add  IEC104,IRIGB,MODBUS in timeSyncSource in SystemConfig.
+				Naina				Namrata: 03/07/2017						Requirement: Implementation of IEC101 Slave.
+				Naina				Namrata: 05/07/2017						Requirement: Implementation of IEC101 Master.
+				Amol,Aaditya		Namrata: 04/07/2017 To 08/07/2017		Requirement: Add Automapping in AI,DI,DO,EN at Configuration.
+									Namrata: 09/07/2017 To 14/07/2017		Requirement: Add Automapping in AI,DI,DO,EN at Mapping Side.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+V.1.2.0			Naina				Namrata: 10/07/2017						Requirement: XSD Validation Without Namespace.
+				Amol				Namrata: 11/07/2017						Changes: Unique SlaveNo for IEC104Group, MODBUSGroup, IEC101Group.
+				Naina				Namrata: 15/07/2017						Requirement: Genrate CSV File for MODBUS Master.
+				Rohini				Namrata: 17/07/2017						Requirement: DIConfiguration for ADRMaster (Event_True,Event_False).
+				Sachin				Namrata: 24/07/2017						Requirement: Increment Index as per DataType For MODBUSSlave.
+									Namrata: 25/07/2017						Requirement: Increment Index as per DataType For MODBUSMaster.
+				Naina				Namrata: 26/07/2017 To 27/07/2017		Requirement: Add IEC101,ADR Master in frmOverview .
+				Gurunath			Namrata: 27/07/2017						Changes: AIConfiguration,DIConfiguration,DOConfiguration,EnConfiguration For Highlight MappingList.
+																			Changes: AIConfiguration,DIConfiguration,DOConfiguration,EnConfiguration in NEXT and PREV Button.
+																			Requirement: Add File Name Footer in frmOpenProPlus.
+				Gurunath			Namrata: 28/07/2017						Requirement: Add Delete All Option in AIConfiguration,DIConfiguration,DOConfiguration,EnConfiguration For Mapping And Confuguration Side.
+				Amol				Namrata: 29/07/2017						Changes: Unique Master No. For IEC103Master,ADRMaster,MODBUSMaster,IEC101master.
+				Amol				Namrata: 09/08/2017						Requirement: Add Map,Count in IED.
+				Rohini				Namrata: 31/08/2017						Requirement: Add TimeZone In System Config.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+V.1.3.0			Naina				Namrata: 1/09/2017 To 08/09/2017		Requirement: Development of IEC61850Client Master.
+									Namrata: 14/09/2017						Requirement: Enable/disable event in AI,DI,DO.
+																			Requirement: Developemnt of RCB.
+									Namrata: 15/09/2017						Hide RCBNode in ADR,IEC101,IEC103,MODBUS in IED.cs.
+				Shilpa														Requirement: Create DI Entry in Vitual DI for Network Configuration,Serial Configuration.
+																			Requirement: Create DI for SecDevice in Virtual Master,Create DI for PrimaryDevice in Virtual Master.
+				Rohini														Requirement: Add "Enable" Attribute in SerialConfiguration in XSD.
+																			Requirement: Add Active in SerialPort Configuration .
+				Naina				Namrata: 12/10/2017						Requirement: Add Recent Files.
+				Sujay Sir			Namrata: 13/10/2017						Requirement: Add DODescription.
+				Sachin				Namrata: 17/10/2017						Requirement: Add DIDatatype in MODBUSMaster.
+				Sachin				Namarta: 11/11/2017						Requirement: Add DeleteAll Option in Virtual DI.
+				Naina				Namrata: 15/11/2017						Requirement: Add AO in MasterConfiguration.
+				Naina				Namrata: 16/11/2017						Requirement: Add Description in Maaping side.
+								    Namrata: 17/11/2017						Problem: Multiple enteris in Virtual Di while exporting XML File.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V.1.1.4			
+				Amol				Namrata: 25/11/2017						Problem: For ImportIED ADRMaster.
+				Naina				Namrata: 01/12/2017						Error: When a xml file is ‘SaveAs’, the name in status bar does not change.
+																			Changes: Do not show validation message if file is valid.
+																			Changes: When start a session and try tp open a file, it asks to save file.
+																			Changes: Change message from File Saved Succesfully -> "File Path complete and File Name" saved successfully.
+									Namrata: 04/12/2017						Changes: DeviceDescripion is always OpenPro+, not read from xml, but saves in xml.
+																			Changes: Progress screen title from "Progress" -> "Please wait..." msg "Loading, Please wait" -> "Loading".
+																			Changes: Screen should be in center,Reduce height:frmProgress.
+									Namrata: 05/12/2017						Changes: Make overview screen list more area, header is consumming 20% of screen, which is westage of screen, arrage well and reduce duplicate titles, if possible.
+																			Changes: Display count for every possible list.
+									Namrata: 09/12/2017						Requirement: Export to excel in frmOverview.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+V.1.1.5
+				Naina				Namrata: 21/12/2017						Changes: Changes in frmOpenPro+ for Recent File.
+									Namrata: 28/12/2017						Changes: Changes in MruList.cs and Add Clear List.
+									Namrata: 06/01/2018						Requirement: Allow to Add Di,Delete Di in VirtualDI.
+				Amol														Requirement: When open XmlFile FileName refreshed  in Statusbar.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+V1.1.6								Swati: 16/01/2018
+				Naina				Namrata: 09/01/2018						Changes: Enhancement(UI).
+									Namrata: 10/01/2018						Changes: Enhancemant(UI).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+V1.1.7
+				Sujay Sir			Namrata : 17/1/2018						Requirement: Add EnableDI in "DOConfiguration" All Masters.
+																			Changes: Update XSD(Add EnableDI in AllMasters).
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.8
+				Swati				Namrata: 18/1/2018						Changes: Maintain Attributes name in Details Class.
+																			Requirement: If count 0 during deleteing it shows proper messages in IEC104Group.
+																			Requirement: At a time only 1 row is select in NetworkConfiguration,SerialPortConfiguration.
+																			Requirement: If Redundancy Mode is "None" then Redundant SystemIP enable false.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.9
+				Amol				Namrata: 19/01/2017						Changes: Change in IEC61850ServerMaster for AI ResponseType , DI ResponseType ,DO ResponseType
+																			Changes: Change in SystemConfig.When RedundancyMode change it cannot update the entry in VirtualDI . 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.10 
+				Rohini				Namrata 20/1/2018						Requirement: Remove DataType in IEC61850Client.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.11
+				Naina				Namrata: 21/01/2018						Requirement: UI Enhancement.
+				Sujay Sir													Requirement: EnableDI,Update XSD.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.12
+				Sachin				Namrata: 23/01/2018						Changes:RCB.
+																			Update XSD.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.13
+				Sachin				Namrata: 24/01/2018						Requirement: System Config.When RedundancyMode is None all enteries in SystemConfig should be removed .
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.14     
+				Rohini				Namrata: 27/01/2018						Requirement: Changes in RCB Section: Convert TriggerOption to Binary.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.15
+				Naina				Namrata: 29/01/2018						Changes:After "SaveAs" file name updated in MruList as well as Registry.
+																			Changes: Message "Do you want to Save Configuration?" should display file name if configuration is loaded from existing xml. 
+																			Changes: While opening file message to save configuration is asked, even though not configuration is opened.
+																			Changes: Change status bar font to match with tree view font, remove bold, use regular font and small size.
+				Shilpa				Namrata: 03/02/2018						Requirement : Add EventWithoutTime attribute in IEC104 slave,which will specify that send events without time if its value is TRUE. Its default
+																			value will be FALSE. It will be optional and unsignedByte.
+																			Changes: Update XSD . 
+																							- Add "EventWithoutTime" Attribute in IEC104Slave.
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+V1.1.16			Rohini				Namrata: 06/2/2018						Requirement: Add VirtualIP in NetworkConfiguration.
+				Swati														Changes: Changes in NetworkConfiguration of Enable/Disable chkEnable.
+									Namrata: 13/02/2018						Requirement: Updated .chm File.
+				Shilpa,Rohini		Namrata: 14/02/2018						Changes: Update XSD.
+																							- Add "VirtualIP" in NetworkConfiguration.
+																							- Add "LinkAddressSize" in IEC101Slave.
+																							- Add "LinkAddress","LinkAddressSize" in IEC101Master.
+																							- Add "NOT" in Opertaion_Logical for DerviedDI.
+			     Rohini				Namrata: 14/02/2018						Requirement: If "RedundancyMode" in SystemConfig is "None" then VirtualIP in NetworkConfiguration is non-editable.
+																			If "RedundancyMode" in SystemConfig is "Primary" or "Secondary" then VirtualIP in NetworkConfiguration is editable.
+																			If VirtualIP in NetworkConfiguration is not "0.0.0.0" then LocalIP in IEC104Slave,MODBUSSlave,IEC61850Server is replace
+																			by VirtualIP in XML.
+																			IP Address and VirtualIP Address validate with respective to Subnet Mask .
+
+									Namrata: 15/02/2018						Update Manual
+															
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+V1.1.17			Naina				Namrata: 16/02/2018						updated Manual , .Chm file
+				Sachin				Namrata: 23/02/2018						Changes: import .icd file issue in IEC61850Server Master .
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________
+V1.1.18			Sachin				
+				Amol				Namrata: 28/02/2018						Changes: For MODBUS Master AI Index issue .
+				Sachin				Namrata: 01/03/2018						Changes: When import XML file if "RedundancyMode" is "Primary/Secondary" it creates automatic entry
+																					 in VirtualDI if Enteries not exist . 
+			    Rohini,Abhay Sir    Namrata: 28/02/2018						Changes: Changes in XSD for set ADR DI Max: 2000
+				Naina				Namrata: 03/03/2018						Changes: Listview for AI,DI,AO,DO,EN BackColour Change for Highlight .
+				Amol				Namrata: 06/03/2018						Requirement: In NetworkConfiguration "br0" does not exist while import XML configurator creates dummy entry of "br0".
+				Rohini				Namrata: 06/03/2018						Requirement: Add "ClockSyncInterval" attribute in ADRMaster.
+																			Requirement: If "ClockSyncInterval" not exist while importing XML set defalut "ClockSyncInterval" value to "60".
+																			Update XSD. Add "ClockSyncInterval" in ADR Master without disturbing old XML's .
+									Namrata: 8/3/2018						Review Meeting 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.19			Sachin				Namrata: 12/03/2018						Changes: while changing IED in IEC61850Server AI,DI,DO not reflected as per IED.
+				Sachin				Namrata: 14/03/2018						Requirement: Reterive "IP" from .icd file for IEC61850Client IED for the field of "RemoteIPAddress".
+																			Requirement: Reterive "IP" from .icd file for IEC61850Client IED for the field of "RemoteIPAddress"..
+				Sachin				Namrata: 15/03/2018						Requirment: while importing IEC61850Server XML keep icd file data with respective IED.
+																			Changes: RCB data not modified as per IED
+																			Changes: On DoubleClick RCB data not displyed as per IED.
+									Namrata: 15/03/2018						Requirement:Add "ICDPath" in XML for IEC61850Client .
+									Namrata: 16/03/2018						Changes: When Save XML "RCB" not updated in RCBConfiguration list .
+																			Changes: after importing xml for iec61850 "ied" name not updated .
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.20			Sachin				Namrata: 19/03/2018						Changes: IEC101Slave ExportINI issue
+																			Requirement: Store .icd file in directories.
+																			Requirement: while importing XML for IEC61850Client keep .icd files data as it is 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.21			Sachin				Namrata: 03/04/2018						Requirement: Export ICD for IEC61850 IED
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.22			Gurunath			Namrata: 28/03/2018						Changes: Reindexing issue
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+V1.1.23			Sachin				Namrata: 28/03/2018						Changes: Reindexing issue
+				Amol														Update XSD. Remove "Enable/Disable" DIMap from MODBUSSlave
+______________________________________________________________________________________________________________________________________--------------------------------------------------------------------------------------------------------------------------
+V1.1.24			Sachin				Namrata: 29/03/2018						If "Select" in DOMap for "MODBUSSlave" exist in xml then remove from xml 																			IEC101Slave ExportINI issue
+_____________________________________________________________________________________________________________________________________________________________________
+V1.1.25			Rohini				Namrata: 09/04/2018						Requirement: Changes in IEC61850Cleint
+																			Requirement: Add EN in IEC61850Client
+																			             Update XSD: Add EN in  iEC61850Client
+																						 Add FC in IEC6850 All Configuration
+																						 on itemchange highlight items in All Config and mapping side .
+																						 keep icd data backup.
+																						 Add FileDirctoryOperations.cs.
+																						 Add AO in IEC61850Client
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.26
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.27
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.28			Naina				Namrata:26/04/2018						Requirement: IEC61850Client
+																			Requirement: If .icd file does not exist then while adding all Configuration it gives error .
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.29								Namrata:02/05/2018						Changes: Reindexing issue in AI,AO,DI,DO,EN
+									Namrata:15/05/2018						Changes: Reindexing issue in AI,AO,DI,DO,EN
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+V1.1.30        Sachin               Ajay: 11/06/2018                        Modbus Master - Index not properly updated for float and 32 bit data types. Mail from Sachin P. dtd. 11/06/2018																				  
+																			Changes done in ENConfiguration and AIConfiguration
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+V1.1.30.1       Amol			    Ajay: 22/08/2018						Issues fixed as per the test report by Amol D by Mail dtd.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.31         Amol				Ajay: 25/09/2018						Issues Fixed - Delete from Parameter Load Configuration should be deleted from Virtual Group
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.32 		Amol				Ajay: 12/10/2018						Issues Fixed - AI Configuration - btnAIMDone
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.33         Amol				Ajay: 26/12/2018                        Requirement from Sachin Parab: Export INI - Popup to display duplicate reporting indexes. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.34		    Naina			    Namrata:31/01/2019						Requirement:Subnet and Gateway user entry should be use the IP Validations rules.
+																						Allow all ranges from 0.0.0.0 to 255.255.255.255.
+																						e.g.Subnet: 255.255.213.0, 255.254.0.0, 255.0.0.0, 255.255.123.0, 255.255.255.0, etc.
+																						Gateway: 0.0.0.0, 172.156.1.1, 10.0.0.1, 192.168.1.1, etc.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V1.1.35			Abahy G.			Namrata:01/02/2019						Requirement: Add ADR_AI_Datatypes,ADR_EN_Datatypes in Common.xsd.
+									Namrata:30/01/2019						Requirement: restrict the > and < sign as an input from the user in every text field.(All Screens)

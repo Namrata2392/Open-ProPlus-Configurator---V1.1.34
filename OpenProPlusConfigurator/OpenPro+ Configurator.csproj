@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{043D039B-9712-4244-9DDB-B9CAD5B81031}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenProPlusConfigurator</RootNamespace>
+    <AssemblyName>OpenPro+ Configurator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\OpenProPlus_Config.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AO.cs" />
+    <Compile Include="AOConfiguration.cs" />
+    <Compile Include="AOMap.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="DerivedParam.cs" />
+    <Compile Include="ExcelUtlity.cs" />
+    <Compile Include="FileDirectoryOperations.cs" />
+    <Compile Include="IEC61850ServerGroup.cs" />
+    <Compile Include="IEC61850ServerMaster.cs" />
+    <Compile Include="IEC61850ServerSlave.cs" />
+    <Compile Include="IEC61850ServerSlaveGroup.cs" />
+    <Compile Include="ADRGroup.cs" />
+    <Compile Include="ADRMaster.cs" />
+    <Compile Include="AIMap.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DerivedDI.cs" />
+    <Compile Include="DD.cs" />
+    <Compile Include="DP.cs" />
+    <Compile Include="ENMap.cs" />
+    <Compile Include="CLA.cs" />
+    <Compile Include="ClosedLoopAction.cs" />
+    <Compile Include="DOMap.cs" />
+    <Compile Include="DIMap.cs" />
+    <Compile Include="EN.cs" />
+    <Compile Include="ENConfiguration.cs" />
+    <Compile Include="DO.cs" />
+    <Compile Include="DI.cs" />
+    <Compile Include="DOConfiguration.cs" />
+    <Compile Include="DIConfiguration.cs" />
+    <Compile Include="Details.cs" />
+    <Compile Include="frmOpenPro+UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenPro+UI.Designer.cs">
+      <DependentUpon>frmOpenPro+UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenProPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenProPlus.Designer.cs">
+      <DependentUpon>frmOpenProPlus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverview.Designer.cs">
+      <DependentUpon>frmOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgess.Designer.cs">
+      <DependentUpon>frmProgess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="IEC101Group.cs" />
+    <Compile Include="IEC101SlaveGroup.cs" />
+    <Compile Include="IEC101Master.cs" />
+    <Compile Include="IEC101Slave.cs" />
+    <Compile Include="IPAddressExtensions.cs" />
+    <Compile Include="MODBUSSlave.cs" />
+    <Compile Include="MODBUSSlaveGroup.cs" />
+    <Compile Include="MruList.cs" />
+    <Compile Include="PLUGroup.cs" />
+    <Compile Include="PLUMaster.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RCB.cs" />
+    <Compile Include="RCBConfiguration.cs" />
+    <Compile Include="RegistryTools.cs" />
+    <Compile Include="SlaveMapping.cs" />
+    <Compile Include="IEC103Group.cs" />
+    <Compile Include="IEC104Group.cs" />
+    <Compile Include="MasterConfiguration.cs" />
+    <Compile Include="MD.cs" />
+    <Compile Include="MDCalculation.cs" />
+    <Compile Include="MODBUSGroup.cs" />
+    <Compile Include="MODBUSMaster.cs" />
+    <Compile Include="ParameterLoadConfiguration.cs" />
+    <Compile Include="Profile.cs" />
+    <Compile Include="ProfileRecord.cs" />
+    <Compile Include="SlaveConfiguration.cs" />
+    <Compile Include="IED.cs" />
+    <Compile Include="SystemConfig.cs" />
+    <Compile Include="SystemConfiguration.cs" />
+    <Compile Include="NativeWinAPI.cs" />
+    <Compile Include="NetWorkConfiguration.cs" />
+    <Compile Include="NetworkInterface.cs" />
+    <Compile Include="OpenProPlus_Config.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AI.cs" />
+    <Compile Include="SerialInterface.cs" />
+    <Compile Include="AIConfiguration.cs" />
+    <Compile Include="SerialPortConfiguration.cs" />
+    <Compile Include="IEC103Master.cs" />
+    <Compile Include="IEC104Slave.cs" />
+    <Compile Include="System\Windows\Controls.cs" />
+    <Compile Include="ucADRGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucADRGroup.Designer.cs">
+      <DependentUpon>ucADRGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucADRMasterConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucADRMasterConfiguration.Designer.cs">
+      <DependentUpon>ucADRMasterConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAIlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAIlist.Designer.cs">
+      <DependentUpon>ucAIlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAOList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAOList.Designer.cs">
+      <DependentUpon>ucAOList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDerivedDI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDerivedDI.Designer.cs">
+      <DependentUpon>ucDerivedDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDerivedParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDerivedParam.Designer.cs">
+      <DependentUpon>ucDerivedParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucClosedLoopAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucClosedLoopAction.Designer.cs">
+      <DependentUpon>ucClosedLoopAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDetails.Designer.cs">
+      <DependentUpon>ucDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDIlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDIlist.Designer.cs">
+      <DependentUpon>ucDIlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDOlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDOlist.Designer.cs">
+      <DependentUpon>ucDOlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucENlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucENlist.Designer.cs">
+      <DependentUpon>ucENlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroup61850Server.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroup61850Server.Designer.cs">
+      <DependentUpon>ucGroup61850Server.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroup61850ServerSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroup61850ServerSlave.Designer.cs">
+      <DependentUpon>ucGroup61850ServerSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupIEC101Slave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupIEC101Slave.Designer.cs">
+      <DependentUpon>ucGroupIEC101Slave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupIEC104.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupIEC104.Designer.cs">
+      <DependentUpon>ucGroupIEC104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupMODBUSSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupMODBUSSlave.Designer.cs">
+      <DependentUpon>ucGroupMODBUSSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucIEC101Group.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucIEC101Group.Designer.cs">
+      <DependentUpon>ucIEC101Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucIED.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucIED.Designer.cs">
+      <DependentUpon>ucIED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMaster61850Server.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMaster61850Server.Designer.cs">
+      <DependentUpon>ucMaster61850Server.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterConfiguration.Designer.cs">
+      <DependentUpon>ucMasterConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterIEC101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterIEC101.Designer.cs">
+      <DependentUpon>ucMasterIEC101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterIEC103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterIEC103.Designer.cs">
+      <DependentUpon>ucMasterIEC103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupIEC103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupIEC103.Designer.cs">
+      <DependentUpon>ucGroupIEC103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupMODBUS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupMODBUS.Designer.cs">
+      <DependentUpon>ucGroupMODBUS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupVirtual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupVirtual.Designer.cs">
+      <DependentUpon>ucGroupVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterMODBUS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterMODBUS.Designer.cs">
+      <DependentUpon>ucMasterMODBUS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterVirtual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterVirtual.Designer.cs">
+      <DependentUpon>ucMasterVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMDCalculation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMDCalculation.Designer.cs">
+      <DependentUpon>ucMDCalculation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucParameterLoadConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucParameterLoadConfiguration.Designer.cs">
+      <DependentUpon>ucParameterLoadConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPLU.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPLU.Designer.cs">
+      <DependentUpon>ucPLU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucProfileRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProfileRecord.Designer.cs">
+      <DependentUpon>ucProfileRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucRCBList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRCBList.Designer.cs">
+      <DependentUpon>ucRCBList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSlaveConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSlaveConfiguration.Designer.cs">
+      <DependentUpon>ucSlaveConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSystemConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSystemConfig.Designer.cs">
+      <DependentUpon>ucSystemConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSystemConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSystemConfiguration.Designer.cs">
+      <DependentUpon>ucSystemConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucNetworkConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNetworkConfiguration.Designer.cs">
+      <DependentUpon>ucNetworkConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucOpenProPlus_Config.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOpenProPlus_Config.Designer.cs">
+      <DependentUpon>ucOpenProPlus_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSerialPortConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSerialPortConfiguration.Designer.cs">
+      <DependentUpon>ucSerialPortConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="VirtualGroup.cs" />
+    <Compile Include="VirtualMaster.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenPro+UI.resx">
+      <DependentUpon>frmOpenPro+UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenProPlus.resx">
+      <DependentUpon>frmOpenProPlus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverview.resx">
+      <DependentUpon>frmOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgess.resx">
+      <DependentUpon>frmProgess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucADRGroup.resx">
+      <DependentUpon>ucADRGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucADRMasterConfiguration.resx">
+      <DependentUpon>ucADRMasterConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAIlist.resx">
+      <DependentUpon>ucAIlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAOList.resx">
+      <DependentUpon>ucAOList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDerivedDI.resx">
+      <DependentUpon>ucDerivedDI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDerivedParam.resx">
+      <DependentUpon>ucDerivedParam.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucClosedLoopAction.resx">
+      <DependentUpon>ucClosedLoopAction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDetails.resx">
+      <DependentUpon>ucDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDIlist.resx">
+      <DependentUpon>ucDIlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDOlist.resx">
+      <DependentUpon>ucDOlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucENlist.resx">
+      <DependentUpon>ucENlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroup61850Server.resx">
+      <DependentUpon>ucGroup61850Server.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroup61850ServerSlave.resx">
+      <DependentUpon>ucGroup61850ServerSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupIEC101Slave.resx">
+      <DependentUpon>ucGroupIEC101Slave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupIEC104.resx">
+      <DependentUpon>ucGroupIEC104.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupMODBUSSlave.resx">
+      <DependentUpon>ucGroupMODBUSSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIEC101Group.resx">
+      <DependentUpon>ucIEC101Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIED.resx">
+      <DependentUpon>ucIED.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMaster61850Server.resx">
+      <DependentUpon>ucMaster61850Server.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterConfiguration.resx">
+      <DependentUpon>ucMasterConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterIEC101.resx">
+      <DependentUpon>ucMasterIEC101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterIEC103.resx">
+      <DependentUpon>ucMasterIEC103.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupIEC103.resx">
+      <DependentUpon>ucGroupIEC103.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupMODBUS.resx">
+      <DependentUpon>ucGroupMODBUS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupVirtual.resx">
+      <DependentUpon>ucGroupVirtual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterMODBUS.resx">
+      <DependentUpon>ucMasterMODBUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterVirtual.resx">
+      <DependentUpon>ucMasterVirtual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMDCalculation.resx">
+      <DependentUpon>ucMDCalculation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucParameterLoadConfiguration.resx">
+      <DependentUpon>ucParameterLoadConfiguration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPLU.resx">
+      <DependentUpon>ucPLU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProfileRecord.resx">
+      <DependentUpon>ucProfileRecord.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRCBList.resx">
+      <DependentUpon>ucRCBList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSlaveConfiguration.resx">
+      <DependentUpon>ucSlaveConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSystemConfig.resx">
+      <DependentUpon>ucSystemConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSystemConfiguration.resx">
+      <DependentUpon>ucSystemConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucNetworkConfiguration.resx">
+      <DependentUpon>ucNetworkConfiguration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucOpenProPlus_Config.resx">
+      <DependentUpon>ucOpenProPlus_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSerialPortConfiguration.resx">
+      <DependentUpon>ucSerialPortConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\master.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modbus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PointDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParameterLoadConfiguration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClosedLoopAction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProfileRecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDCalculation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mappingview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mappingview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SlaveRadioButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenindicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_7_6752810522.ico" />
+    <None Include="Resources\61850Master.ico" />
+    <Content Include="Version.txt" />
+    <Content Include="ProjectTools_64x64.ico" />
+    <None Include="Resources\IEC101Master.jpg" />
+    <None Include="Resources\61850ServerMaster.ico" />
+    <None Include="Resources\IEC61850ClientGroup.ico" />
+    <None Include="Resources\IEC61850ServerGroup.ico" />
+    <None Include="Resources\RCB.ico" />
+    <None Include="Resources\IEC61850ServerMaster.ico" />
+    <None Include="Resources\AO.ico" />
+    <None Include="Resources\AO.bmp" />
+    <None Include="Resources\Save.ico" />
+    <None Include="Resources\Save %289%29.png" />
+    <None Include="Resources\Save %289%29.ico" />
+    <None Include="Resources\Save %289%291.ico" />
+    <None Include="Resources\Save %285%29.ico" />
+    <None Include="Resources\delete %281%29.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\info %281%29.png" />
+    <None Include="Resources\cross-mark-on-a-black-circle-background %281%29.png" />
+    <None Include="Resources\switch %285%29.png" />
+    <None Include="Resources\switch.png" />
+    <None Include="Resources\switch %281%29.png" />
+    <None Include="Resources\switch %288%29.png" />
+    <None Include="Resources\imageedit_7_6956011015.ico" />
+    <None Include="Resources\imageedit_13_8484272357.ico" />
+    <None Include="Resources\imageedit_13_8484272357.png" />
+    <None Include="Resources\imageedit_13_84842723571.ico" />
+    <None Include="Resources\IEC101Master.png" />
+    <None Include="Resources\IEC101Group.ico" />
+    <None Include="Resources\IEC101SlaveGroup.ico" />
+    <None Include="Resources\GenrateCSVFile.png" />
+    <None Include="Resources\Genrate CSV File.png" />
+    <None Include="Resources\ADRGroup.bmp" />
+    <None Include="Resources\ADRGroup.jpg" />
+    <None Include="Resources\ADRGroup .png" />
+    <None Include="Resources\ADRGroup.ico" />
+    <Content Include="Resources\ADRGroup.png" />
+    <None Include="Resources\ADRMaster.bmp" />
+    <None Include="Resources\ADRMaster.ico" />
+    <Content Include="Resources\ADRMaster.png" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\MODBUSSlaveGroup.ico" />
+    <None Include="Resources\OpenProPlus_Config.ico" />
+    <None Include="Resources\MODBUSGroup.ico" />
+    <None Include="Resources\IEC104Group.ico" />
+    <None Include="Resources\ClosedLoopAction.ico" />
+    <None Include="Resources\Close Loop.ico" />
+    <None Include="Resources\DerivedParam.ico" />
+    <None Include="Resources\DerivedDI.ico" />
+    <None Include="Resources\IED.ico" />
+    <None Include="Resources\EN.ico" />
+    <None Include="Resources\DO.ico" />
+    <None Include="Resources\DI.ico" />
+    <None Include="Resources\AI.ico" />
+    <None Include="Resources\AI.png" />
+    <None Include="Resources\DerivedDI.png" />
+    <None Include="Resources\DerrivedDI.png" />
+    <None Include="Resources\VirtualMaster.png" />
+    <None Include="Resources\DerivedParam.png" />
+    <None Include="Resources\EN.png" />
+    <None Include="Resources\DO.png" />
+    <None Include="Resources\DI.png" />
+    <None Include="Resources\IED.png" />
+    <None Include="Resources\Virtual.png" />
+    <None Include="Resources\ModbusMaster.png" />
+    <None Include="Resources\IEC103Master.png" />
+    <None Include="Resources\VirtualGroup.png" />
+    <None Include="Resources\IEC103Group.png" />
+    <None Include="Resources\DerivedParameter.png" />
+    <None Include="Resources\DerrivedParameter.png" />
+    <None Include="Resources\Derrived Parameter.png" />
+    <None Include="Resources\aepl.ico" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\sorting.png" />
+    <None Include="Resources\Overview.ico" />
+    <None Include="Resources\Overview.png" />
+    <None Include="Resources\desc.png" />
+    <None Include="Resources\ProjectTools_64x64.ico" />
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
